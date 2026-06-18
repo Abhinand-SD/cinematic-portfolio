@@ -1,0 +1,12 @@
+.main {
+  position: relative;
+  width: 100%;
+}
+
+/*
+ * Sticky-reveal scroll model:
+ * The hero (inside VideoIntro) is position: sticky; top: 0 and sits on a lower
+ * stacking layer. The next section is relative with an opaque background and a
+ * higher z-index, so as the user scrolls it slides up and over the pinned hero —
+ * the classic cinematic "the page lifts away from the film" reveal.
+ */

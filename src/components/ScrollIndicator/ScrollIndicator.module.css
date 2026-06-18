@@ -1,0 +1,83 @@
+.indicator {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(1.4rem, 4vh, 2.8rem);
+  transform: translateX(-50%);
+  z-index: 6;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+
+  color: var(--text-faint);
+  transition: color 0.5s var(--ease-soft);
+}
+
+.indicator:hover {
+  color: var(--text);
+}
+
+.label {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.64rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  padding-left: 0.4em;
+}
+
+.line {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: clamp(44px, 7vh, 72px);
+  background: linear-gradient(
+    to bottom,
+    rgba(245, 241, 234, 0.06),
+    rgba(245, 241, 234, 0.22)
+  );
+  overflow: hidden;
+}
+
+.pulse {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 38%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    var(--warm-soft),
+    transparent
+  );
+  box-shadow: 0 0 8px var(--warm-glow);
+  animation: pulseDown 2.4s var(--ease-soft) infinite;
+}
+
+@keyframes pulseDown {
+  0% {
+    transform: translate(-50%, -120%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 220%);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pulse {
+    animation: none;
+    transform: translate(-50%, 60%);
+    opacity: 0.8;
+  }
+}

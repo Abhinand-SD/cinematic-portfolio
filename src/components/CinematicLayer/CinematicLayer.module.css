@@ -1,0 +1,13 @@
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  /* Sits above the video + gradient overlays, below the text content. */
+  z-index: 3;
+  /* Additive blending in the shader already gives the glow; dropping the
+     per-frame screen blend + filter over moving video stops frame drops. */
+  opacity: 0.95;
+}

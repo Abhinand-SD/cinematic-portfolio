@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ---- Cinematic theme tokens ---- */
+  --bg: #070707;
+  --bg-deep: #040404;
+  --surface: #0c0b0a;
+
+  /* Warm practical orange light */
+  --warm: #ff7a18;
+  --warm-soft: #ff8a3d;
+  --warm-glow: rgba(255, 122, 24, 0.35);
+
+  /* Soft monitor blue glow */
+  --blue: #6ea8ff;
+  --blue-glow: rgba(110, 168, 255, 0.22);
+
+  /* Warm white text */
+  --text: #f5f1ea;
+  --text-dim: rgba(245, 241, 234, 0.66);
+  --text-faint: rgba(245, 241, 234, 0.42);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-bg-hover: rgba(255, 255, 255, 0.14);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-blur: 14px;
+
+  /* Motion */
+  --ease-cinema: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  background: var(--bg-deep);
+  color: var(--text);
+  font-family: var(--font-body), system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* `clip` (not `hidden`) prevents horizontal scroll WITHOUT creating a scroll
+     container — `overflow-x: hidden` forces `overflow-y` to compute to `auto`,
+     which makes html/body the scroll container and breaks `position: sticky`
+     (the project card stack would never pin). */
+  overflow-x: clip;
+}
+
+body {
+  min-height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+::selection {
+  background: var(--warm);
+  color: #1a0d02;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---- Ported projects section (harsh-portfolio) helpers ---- */
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+img {
+  -webkit-user-drag: none;
+  user-select: none;
+}
