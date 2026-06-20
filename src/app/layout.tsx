@@ -25,9 +25,27 @@ const accent = Kanit({
 });
 
 export const metadata: Metadata = {
-  title: "Abhinand SD — Creative Developer & Designer",
+  title: "Abhinand SD - Creative Developer & Designer",
   description:
     "Building immersive, cinematic web experiences with React, Three.js & motion design.",
+  manifest: "/favicon/site.webmanifest",
+  icons: {
+    // Modern browsers pick the PNG; favicon.ico is the legacy fallback.
+    icon: [
+      { url: "/favicon/favicon-96x96.png", type: "image/png", sizes: "96x96" },
+    ],
+    shortcut: [{ url: "/favicon/favicon.ico" }],
+    apple: [
+      {
+        url: "/favicon/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
+    ],
+  },
+  appleWebApp: {
+    title: "Abhinand SD",
+  },
 };
 
 export const viewport: Viewport = {
