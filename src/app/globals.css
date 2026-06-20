@@ -105,3 +105,27 @@ img {
   -webkit-user-drag: none;
   user-select: none;
 }
+
+/* ---- Hide scrollbar, keep scroll functionality ----
+   Apply `.hide-scrollbar` to any scrollable container.
+   Scrolling via wheel/touch/keyboard/JS still works. */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ / legacy Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge (Chromium), Opera */
+}
+
+/* Hide the page (document) scrollbar too — scroll still works. */
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ / legacy Edge */
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Edge (Chromium), Opera */
+}
