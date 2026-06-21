@@ -45,27 +45,27 @@ const CONTACT_METHODS: ContactMethod[] = [
   {
     icon: Mail,
     label: "Email",
-    value: "your@email.com",
-    href: "mailto:your@email.com",
+    value: "abhinandsd49@email.com",
+    href: "mailto:abhinandsd49@email.com",
   },
   {
     icon: MessageCircle,
     label: "WhatsApp",
     // wa.me requires digits only — no +, no spaces, no hyphens
-    value: "+00 00000 00000",
-    href: "https://wa.me/0000000000",
+    value: "8129698496",
+    href: "https://wa.me/8129698496",
   },
   {
     icon: Linkedin,
     label: "LinkedIn",
-    value: "in/your-handle",
-    href: "https://www.linkedin.com/in/your-handle/",
+    value: "in/abhinand-sd",
+    href: "https://www.linkedin.com/in/abhinand-sd/",
   },
   {
     icon: Github,
     label: "GitHub",
-    value: "@your-handle",
-    href: "https://github.com/your-handle",
+    value: "@abhinand-sd",
+    href: "https://github.com/abhinand-sd",
   },
 ];
 
